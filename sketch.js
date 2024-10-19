@@ -1,15 +1,12 @@
-function preload() {
-  // put preload code here
-}
+let numGlifs = 30;  // Numero di glifi per riga/colonna
+let glifSize = 70;   // Dimensione di ciascun glifo
+let padding = 20;    // Spazio tra i glifi
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  // put setup code here
-  const message =
-    "This is a template repository\nfor the course Laboratorio di Computergrafica\nCommunication Design, Politecnico di Milano";
-  textAlign(CENTER, CENTER);
-  textSize(16);
-  text(message, width / 2, height / 2);
+  background("#e5e1d4");
+  noLoop(); 
+
 }
 
 function draw() {
