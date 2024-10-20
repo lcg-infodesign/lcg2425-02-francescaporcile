@@ -27,7 +27,7 @@ function drawGlif (x, y, size){
   //ciclo for che mi permtte di ripetere il ciclo fintanto che la variabile i è minore del numero di forme che devono essere disegnate, incremento di 1 della variabile dopo ogni ciclo
   for (let i=0; i< shapeCount; i++) {
   //generare un numero intero casuale tra 0 e 2
-  let randomShape = int(random(3));
+  let randomShape = int(random(4));
 
   //colori casauli, a partire dalla generazione casuale di numeri da 0 al 255 (tre componeti per red, green, blue (RGB))
   let r=random(255);
@@ -45,12 +45,17 @@ if(randomShape===0) {
 rect (-rectSize/ 2, -rectSize/2, rectSize, rectSize)
 }else if (randomShape===2){
   let lineLength = random (size/2, size);
-  rotate(random(TWO_PI));  // Ruota casualmente
+  rotate(random(TWO_PI));  // Ruota casualmente, angoli in radianti (TWO_PI -> 2π)
   stroke(0);
   line(-lineLength / 2, 0, lineLength / 2, 0);  // Disegna una linea
   noStroke();
+} else if (randomShape === 3) { // Caso per il triangolo
+  let triangleSize = random(size / 4, size / 2);
+  let halfSize = triangleSize / 2;
+  triangle(-halfSize, halfSize, halfSize, halfSize, 0, -halfSize); // Disegna il triangolo
 }
 }
+
 pop();
 }
 
