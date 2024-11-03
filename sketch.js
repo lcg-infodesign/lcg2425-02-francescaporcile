@@ -1,18 +1,18 @@
-let glifSize = 15;   // Dimensione del glifo
+let glifSize = 16;   // Dimensione del glifo
 let space = 28;      // Spazio tra i glifi
-let padding = 30;    // Padding attorno alla griglia
+let padding = 32;    // Padding attorno alla griglia
 let colors = [];     // Array per i colori (generati casualmente)
 
 function setup() {
   createCanvas(windowWidth, windowHeight); //tela grande quanto la finestra del browser
-  background("#ffffff"); //bianco 
+  background("#E6E6E6"); //bianco sporco
   noLoop();
-// Genera un array di colori casuali, ciclo for con 15 colori random (lavora sulle tre componenti del modello colore RGB)
-for (let i = 0; i < 15; i++) {
+// Genera un array di colori casuali, ciclo for con 10 colori random (lavora sulle tre componenti del modello colore RGB)
+//minore è il numero di iterazioni, maggiore è la coerenza della palette cromatica dell'insieme della tela 
+for (let i = 0; i < 10; i++) {
   //ogni volta che il ciclo si ripete, un nuovo colore viene aggiunto all'array
   colors.push(color(random(255), random(255), random(255)))
 }
-
   // Calcola la larghezza e l'altezza disponibili per la griglia, considerando il padding
   let MaxWidth = width - 2 * padding;   // Larghezza totale disponibile (viene sottratto due volte il padding, a destra e a sinistra)
   let MaxHeight = height - 2 * padding; // Altezza totale disponibile (viene sottratto due volte il padding, in alto e in basso)
@@ -33,7 +33,7 @@ function drawGlifo(x, y, size) {
   push();
   translate(x + size / 2, y + size / 2);  //sposta l'origine delle coordinate al centro del glifo
   let layers = int(random(4, 8));  //imposta un numero casuale di livelli concentrici, compreso tra 4 e 8
-  let segments = int(random(6, 12));  //imposta numero di segmenti radiali, tra 6 e 12, dando al glifo simmetria radiale
+  let segments = int(random(4, 12));  //imposta numero di segmenti radiali, tra 6 e 12, dando al glifo simmetria radiale
 //ciclo for per disegnare ogni livello concentrico
   for (let i = 0; i < layers; i++) {
     let layerSize = map(i, 0, layers, size / 5, size); //calcola la dimensione del livello corrente, che descresce verso il centro del glifo
