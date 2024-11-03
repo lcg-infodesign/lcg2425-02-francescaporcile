@@ -5,7 +5,7 @@ let colors = [];     // Array per i colori (generati casualmente)
 
 function setup() {
   createCanvas(windowWidth, windowHeight); //tela grande quanto la finestra del browser
-  background("#E6E6E6"); //bianco sporco
+  background("#DDDDDD"); //bianco sporco
   noLoop();
 // Genera un array di colori casuali, ciclo for con 10 colori random (lavora sulle tre componenti del modello colore RGB)
 //minore è il numero di iterazioni, maggiore è la coerenza della palette cromatica dell'insieme della tela 
