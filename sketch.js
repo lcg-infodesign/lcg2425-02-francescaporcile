@@ -8,7 +8,7 @@ function setup() {
   background("#DDDDDD"); //bianco sporco
   noLoop();
 // Genera un array di colori casuali, ciclo for con 10 colori random (lavora sulle tre componenti del modello colore RGB)
-//minore è il numero di iterazioni, maggiore è la coerenza della palette cromatica dell'insieme della tela 
+//minore è il numero di iterazioni, maggiore è la coerenza della palette cromatica della tela 
 for (let i = 0; i < 10; i++) {
   //ogni volta che il ciclo si ripete, un nuovo colore viene aggiunto all'array
   colors.push(color(random(255), random(255), random(255)))
